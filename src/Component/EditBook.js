@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 const EdtBook = () => {
+  const onlineBackUrl="https://bookmanagementsystem-jizn.onrender.com"
+
   const [name, setName] = useState()
   const [author, setAuthor] = useState()
   const navigate = useNavigate()
@@ -14,7 +16,7 @@ const EdtBook = () => {
 
   }
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/firstap1/getBookAcToId/${id}`)
+    axios.get(`${onlineBackUrl}/api/firstap1/getBookAcToId/${id}`)
       .then((ele) => {
         const { author, title, name, _id } = ele.data.data
         setName(name)
@@ -28,7 +30,7 @@ const EdtBook = () => {
   }, [])
   const handleEditBook = (e) => {
     e.preventDefault();
-    axios.put(`/api/firstap1/editBooks/${id}`, { name, author, title }
+    axios.put(`${onlineBackUrl}/api/firstap1/editBooks/${id}`, { name, author, title }
     ).then((res) => {
       console.log("Updated books successfully", res)
       navigate("/")

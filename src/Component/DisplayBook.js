@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { Link, } from "react-router-dom";
 const DisplayBook = () => {
+    const onlineBackUrl="https://bookmanagementsystem-jizn.onrender.com"
+
     const [list, setList] = useState([])
     const getData=()=>{
-        axios.get("/api/firstap1/getAllBook")
+        axios.get(`${onlineBackUrl}/api/firstap1/getAllBook`)
             .then((val) => {
                 setList(val.data.getBookLists)
                 // console.log(val.data.getBookLists)
@@ -18,7 +20,7 @@ const DisplayBook = () => {
     }, [])
     console.log(list)
     const handleDeleteBook=(ids)=>{
-        axios.delete(`/api/firstap1/deleteBooklist/${ids}`)
+        axios.delete(`${onlineBackUrl}/api/firstap1/deleteBooklist/${ids}`)
         .then(()=>{
             getData()
 

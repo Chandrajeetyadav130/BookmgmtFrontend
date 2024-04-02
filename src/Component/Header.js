@@ -2,7 +2,6 @@ import { Link ,Outlet} from "react-router-dom"
 const Header=()=>{
     return(
         <div>
-{/* checksss */}
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
                     <a className="navbar-brand BookmgmtLogo" href="#">BookmgmtLogo</a>
@@ -18,21 +17,7 @@ const Header=()=>{
                     </div>
                 </div>
             </nav>
-{/* checksksks */}
 
-            {/* <header className="bookHeader">
-                <div className="BookmgmtLogo">
-                   <h2>BookmgmtLogo</h2>
-                </div>
-                <div className="book_lst">
-                    <ul>
-                        <Link exact="true" to="/"><li>Book1</li></Link>
-                        <Link to="/addBook"><li>Add book</li></Link>
-
-                        <Link to="/displayBook"><li>Book lists</li></Link>
-                    </ul>
-                </div>
-            </header> */}
             <Outlet/>
         </div>
     )

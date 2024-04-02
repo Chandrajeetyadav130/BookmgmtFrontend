@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 const AddBook=()=>{
+    const onlineBackUrl="https://bookmanagementsystem-jizn.onrender.com"
     const navigate=useNavigate()
     const [items,setItems]=useState({
         name:"",
@@ -15,7 +16,7 @@ const AddBook=()=>{
    
     const handleSubmitBook=(e)=>{
         e.preventDefault()
-        axios.post("/api/firstap1/addbook",items
+        axios.post(`${onlineBackUrl}/api/firstap1/addbook`,items
    
         ).then(()=>{
 
